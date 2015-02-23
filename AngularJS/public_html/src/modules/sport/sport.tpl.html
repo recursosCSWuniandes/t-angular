@@ -30,6 +30,8 @@
 					<th>Name</th>
 					<th>Min Age</th>
 					<th>Max Age</th>
+					<th>Avg Age</th>
+					<th>Rules</th>
 					<th>Actions</th>
 				</tr>
 			</thead>
@@ -38,6 +40,8 @@
 					<td>{{record.name}}</td>
 					<td>{{record.minAge}}</td>
 					<td>{{record.maxAge}}</td>
+					<td>{{sportCtrl.getAvgAge(record)}}</td>
+					<td>{{record.rules}}</td>
 					<td>
 						<button class="btn btn-default btn-sm" ng-click="sportCtrl.editRecord(record)"><span class="glyphicon glyphicon-edit"></span> Edit</button>
 						<button class="btn btn-default btn-sm" ng-click="sportCtrl.deleteRecord(record)"><span class="glyphicon glyphicon-minus"></span> Delete</button>
@@ -60,6 +64,10 @@
 			<div class="form-group">
 				<label for="maxAge">Max Age</label>
 				<input id="maxAge" class="form-control" type="number" ng-model="currentRecord.maxAge"/>
+			</div>
+			<div class="form-group">
+				<label for="rules">Rules</label>
+				<input id="rules" class="form-control" type="text" ng-model="currentRecord.rules"/>
 			</div>
 		</form>
 	</div>
