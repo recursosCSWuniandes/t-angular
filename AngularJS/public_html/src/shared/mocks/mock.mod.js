@@ -50,7 +50,9 @@
             var ignore_regexp = new RegExp('^((?!' + baseUrl + ').)*$');
             $httpBackend.whenGET(ignore_regexp).passThrough();
             for (var i in urls) {
-                mockUrls(urls[i]);
+                if (urls.hasOwnProperty(i)) {
+                    mockUrls(urls[i]);
+                }
             }
         }]);
 })();
