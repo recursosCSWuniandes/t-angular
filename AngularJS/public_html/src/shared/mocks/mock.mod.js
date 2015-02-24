@@ -8,13 +8,13 @@
                 mockRecords[entity_url] = [];
                 var fullUrl = baseUrl + '/' + entity_url;
                 var url_regexp = new RegExp(fullUrl + '/([0-9]+)');
-                $httpBackend.whenGET(fullUrl).respond(function (method, url, data) {
+                $httpBackend.whenGET(fullUrl).respond(function () {
                     return [200, mockRecords[entity_url], {}];
                 });
-                $httpBackend.whenGET(url_regexp).respond(function (method, url, data) {
+                $httpBackend.whenGET(url_regexp).respond(function (method, url) {
                     var id = parseInt(url.split('/').pop());
                     var record;
-                    angular.forEach(mockRecords[entity_url], function (value, key) {
+                    angular.forEach(mockRecords[entity_url], function (value) {
                         if (value.id === id) {
                             record = angular.copy(value);
                         }
@@ -36,7 +36,7 @@
                     });
                     return [200, null, {}];
                 });
-                $httpBackend.whenDELETE(url_regexp).respond(function (method, url, data) {
+                $httpBackend.whenDELETE(url_regexp).respond(function (method, url) {
                     var id = parseInt(url.split('/').pop());
                     angular.forEach(mockRecords[entity_url], function (value, key) {
                         if (value.id === id) {
