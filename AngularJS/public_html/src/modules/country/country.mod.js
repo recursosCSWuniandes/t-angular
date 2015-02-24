@@ -8,7 +8,7 @@
         }]);
 
     countryModule.run(['$httpBackend', 'country.context', 'MockModule.mockRecords', function ($httpBackend, context, mockRecords) {
-            $httpBackend.whenGET('webresources/' + context + '/mostPopulated').respond(function (method, url, data) {
+            $httpBackend.whenGET('webresources/' + context + '/mostPopulated').respond(function () {
                 var top;
                 var collection = mockRecords[context];
                 for (var i in collection) {
