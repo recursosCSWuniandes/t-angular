@@ -2,7 +2,7 @@
     var crud = angular.module('CrudModule');
 
     crud.factory('CRUDUtils', ['Restangular', function (RestAngular) {
-            function CRUD($scope) {
+            function crudFunction($scope) {
                 this.api = RestAngular.all(this.url);
                 $scope.currentRecord = {};
                 $scope.records = [];
@@ -46,7 +46,7 @@
             ;
             return {
                 extendCtrl: function (obj, scope) {
-                    CRUD.call(obj, scope);
+                    crudFunction.call(obj, scope);
                 }
             };
         }]);
