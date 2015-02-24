@@ -12,10 +12,10 @@
                     return [200, mockRecords[entity_url], {}];
                 });
                 $httpBackend.whenGET(url_regexp).respond(function (method, url, data) {
-                    var id = url.split('/').pop();
+                    var id = parseInt(url.split('/').pop());
                     var record;
                     angular.forEach(mockRecords[entity_url], function (value, key) {
-                        if (value.id == id) {
+                        if (value.id === id) {
                             record = angular.copy(value);
                         }
                     });
@@ -37,9 +37,9 @@
                     return [200, null, {}];
                 });
                 $httpBackend.whenDELETE(url_regexp).respond(function (method, url, data) {
-                    var id = url.split('/').pop();
+                    var id = parseInt(url.split('/').pop());
                     angular.forEach(mockRecords[entity_url], function (value, key) {
-                        if (value.id == id) {
+                        if (value.id === id) {
                             mockRecords[entity_url].splice(key, 1);
                         }
                     });
@@ -50,7 +50,7 @@
             var ignore_regexp = new RegExp('^((?!' + baseUrl + ').)*$');
             $httpBackend.whenGET(ignore_regexp).passThrough();
             for (var i in urls) {
-                mockUrls(urls[i])
+                mockUrls(urls[i]);
             }
         }]);
 })();
