@@ -8,10 +8,20 @@
                 $scope.records = [];
                 this.editMode = false;
 
+                this.pageChanged = function () {
+                    this.fetchRecords();
+                };
+                
+                $scope.maxSize = 5;
+                $scope.itemsPerPage = 5;
+                $scope.totalItems = 0;
+                $scope.currentPage = 1;
+
                 this.fetchRecords = function () {
                     var self = this;
-                    this.api.getList().then(function (data) {
+                    this.api.getList(null,{page: $scope.currentPage, maxRecords: $scope.itemsPerPage}).then(function (data) {
                         $scope.records = data;
+                        $scope.totalItems = data.totalRecords;
                         $scope.currentRecord = {};
                         self.editMode = false;
                     });

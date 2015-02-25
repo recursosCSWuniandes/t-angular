@@ -8,8 +8,16 @@
                 mockRecords[entity_url] = [];
                 var fullUrl = baseUrl + '/' + entity_url;
                 var url_regexp = new RegExp(fullUrl + '/([0-9]+)');
-                $httpBackend.whenGET(fullUrl).respond(function () {
-                    return [200, mockRecords[entity_url], {}];
+                $httpBackend.whenGET(fullUrl).respond(function (method, url, data, params) {
+                    var responseObj = {totalRecords: mockRecords[entity_url].length};
+                    if (params && params.page && params.maxRecords) {
+                        var start_index = (params.page - 1) * params.maxRecords;
+                        var end_index = start_index + params.maxRecords;
+                        responseObj.records = mockRecords[entity_url].slice(start_index,end_index);
+                    }else {
+                        responseObj.records = mockRecords[entity_url];
+                    }
+                    return [200, responseObj, {}];
                 });
                 $httpBackend.whenGET(url_regexp).respond(function (method, url) {
                     var id = parseInt(url.split('/').pop());

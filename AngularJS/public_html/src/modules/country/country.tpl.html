@@ -45,6 +45,7 @@
 				</tr>
 			</tbody>
 		</table>
+        <pagination total-items="totalItems" ng-model="currentPage" ng-change="countryCtrl.pageChanged()" max-size="maxSize" class="pagination-sm" boundary-links="true" rotate="false" items-per-page="itemsPerPage"></pagination>
 	</div>
 	<div ng-show="countryCtrl.editMode">
 		<form name="countryForm" role="form">
