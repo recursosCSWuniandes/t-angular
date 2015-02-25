@@ -14,5 +14,15 @@
                     }
                 });
             };
+            
+            this.getLeastPopulated = function () {
+                this.api.customGET('leastPopulated').then(function (data) {
+                    if (data.name) {
+                        alert('The least populated country is ' + data.name + ' with ' + data.population + ' habitants');
+                    } else {
+                        alert('There are no countries with population on server');
+                    }
+                });
+            };
         }]);
 })();

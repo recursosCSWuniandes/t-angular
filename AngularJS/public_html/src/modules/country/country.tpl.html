@@ -19,7 +19,8 @@
 					<button class="btn btn-default navbar-btn" ng-hide="countryCtrl.editMode" ng-click="countryCtrl.fetchRecords()"><span class="glyphicon glyphicon-refresh"></span> Refresh</button>
 					<button class="btn btn-default navbar-btn" ng-show="countryCtrl.editMode" ng-click="countryCtrl.saveRecord()"><span class="glyphicon glyphicon-floppy-disk"></span> Save</button>
 					<button class="btn btn-default navbar-btn" ng-show="countryCtrl.editMode" ng-click="countryCtrl.fetchRecords()"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
-					<button class="btn btn-default navbar-btn" ng-click="countryCtrl.getMostPopulated()"><span class="glyphicon glyphicon-star"></span> Most Populated</button>
+					<button class="btn btn-default navbar-btn" ng-click="countryCtrl.getLeastPopulated()"><span class="glyphicon glyphicon-star"></span> Least Populated</button>
+                    <button class="btn btn-default navbar-btn" ng-click="countryCtrl.getMostPopulated()"><span class="glyphicon glyphicon-star"></span> Most Populated</button>
 				</div>
 			</div>
 		</nav>
