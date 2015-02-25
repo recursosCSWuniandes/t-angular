@@ -1,6 +1,6 @@
-(function(){
+(function () {
     var countryModule = angular.module('countryModule');
-    
+
     countryModule.run(['$httpBackend', 'country.context', 'MockModule.mockRecords', function ($httpBackend, context, mockRecords) {
             $httpBackend.whenGET('webresources/' + context + '/mostPopulated').respond(function () {
                 var top;
@@ -16,7 +16,7 @@
                 }
                 return [200, top || {}, {}];
             });
-            
+
             $httpBackend.whenGET('webresources/' + context + '/leastPopulated').respond(function () {
                 var top;
                 var collection = mockRecords[context];

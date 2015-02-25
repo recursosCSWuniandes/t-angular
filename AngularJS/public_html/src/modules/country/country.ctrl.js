@@ -14,7 +14,7 @@
                     }
                 });
             };
-            
+
             this.getLeastPopulated = function () {
                 this.api.customGET('leastPopulated').then(function (data) {
                     if (data.name) {
