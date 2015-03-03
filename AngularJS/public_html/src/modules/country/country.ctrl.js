@@ -1,12 +1,11 @@
 (function () {
-    var app = angular.module('countryModule');
+    var countryModule = angular.module('countryModule');
 
-    app.controller('countryCtrl', ['$scope', 'CRUDUtils', 'country.context', function ($scope, CRUDUtils, context) {
-            this.url = context;
-            CRUDUtils.extendCtrl(this, $scope);
+    countryModule.controller('countryCtrl', ['$scope', 'countryService', function ($scope, countryService) {
+            countryService.extendCtrl(this, $scope);
             this.fetchRecords();
             this.getMostPopulated = function () {
-                this.api.customGET('mostPopulated').then(function (data) {
+                countryService.api.customGET('mostPopulated').then(function (data) {
                     if (data.name) {
                         alert('The most populated country is ' + data.name + ' with ' + data.population + ' habitants');
                     } else {
@@ -16,7 +15,7 @@
             };
 
             this.getLeastPopulated = function () {
-                this.api.customGET('leastPopulated').then(function (data) {
+                countryService.api.customGET('leastPopulated').then(function (data) {
                     if (data.name) {
                         alert('The least populated country is ' + data.name + ' with ' + data.population + ' habitants');
                     } else {
