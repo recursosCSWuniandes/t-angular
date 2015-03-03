@@ -1,9 +1,8 @@
 (function () {
-    var app = angular.module('sportModule');
+    var sportModule = angular.module('sportModule');
 
-    app.controller('sportCtrl', ['$scope', 'CRUDUtils', 'sport.context', function ($scope, CRUDUtils, context) {
-            this.url = context;
-            CRUDUtils.extendCtrl(this, $scope);
+    sportModule.controller('sportCtrl', ['$scope', 'sportService', function ($scope, sportService) {
+            sportService.extendCtrl(this, $scope);
             this.fetchRecords();
             this.getAvgAge = function (sport) {
                 return (sport.minAge + sport.maxAge) / 2;
