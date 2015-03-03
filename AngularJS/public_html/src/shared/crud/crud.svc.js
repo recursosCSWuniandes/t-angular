@@ -39,10 +39,6 @@
                     //Funciones que usan el servicio CRUD
                     var service = this;
 
-                    ctrl.pageChanged = function () {
-                        this.fetchRecords();
-                    };
-
                     ctrl.fetchRecords = function () {
                         return service.fetchRecords().then(function (data) {
                             scope.records = data;
