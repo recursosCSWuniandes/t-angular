@@ -1,5 +1,5 @@
 (function () {
-    var sportModule = angular.module('sportModule', ['CrudModule', 'MockModule']);
+    var sportModule = angular.module('sportModule', ['CrudModule', 'MockModule','countryModule']);
 
     sportModule.constant('sport.context', 'sports');
 
