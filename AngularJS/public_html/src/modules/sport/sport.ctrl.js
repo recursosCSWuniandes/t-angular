@@ -10,5 +10,13 @@
             countryService.fetchRecords().then(function(data){
                 $scope.countryRecords = data;
             });
+            this.getCountryName = function(id){
+                for (var i in $scope.countryRecords) {
+                    if ($scope.countryRecords[i].id === id) {
+                        return $scope.countryRecords[i].name;
+                    }
+                }
+                return;
+            };
         }]);
 })();

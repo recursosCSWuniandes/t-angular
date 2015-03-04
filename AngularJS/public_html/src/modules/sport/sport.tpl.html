@@ -43,7 +43,7 @@
 					<td>{{record.maxAge}}</td>
 					<td>{{sportCtrl.getAvgAge(record)}}</td>
 					<td>{{record.rules}}</td>
-                    <td>{{record.country.name}}</td>
+                                        <td>{{sportCtrl.getCountryName(record.country)}}</td>
 					<td>
 						<button class="btn btn-default btn-sm" ng-click="sportCtrl.editRecord(record)"><span class="glyphicon glyphicon-edit"></span> Edit</button>
 						<button class="btn btn-default btn-sm" ng-click="sportCtrl.deleteRecord(record)"><span class="glyphicon glyphicon-minus"></span> Delete</button>
@@ -74,7 +74,7 @@
 			</div>
             <div class="form-group">
                 <label for="country">Country</label>
-                <select id="country" class="form-control" ng-options="country.name for country in countryRecords" ng-model="currentRecord.country"></select>
+                <select id="country" class="form-control" ng-options="country.id as country.name for country in countryRecords" ng-model="currentRecord.country"></select>
             </div>
 		</form>
 	</div>
