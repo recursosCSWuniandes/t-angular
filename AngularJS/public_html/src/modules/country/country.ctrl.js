@@ -5,7 +5,7 @@
             countryService.extendCtrl(this, $scope);
             this.fetchRecords();
             this.getMostPopulated = function () {
-                countryService.api.customGET('mostPopulated').then(function (data) {
+                countryService.getMostPopulated().then(function(data){
                     if (data.name) {
                         alert('The most populated country is ' + data.name + ' with ' + data.population + ' habitants');
                     } else {
@@ -15,7 +15,7 @@
             };
 
             this.getLeastPopulated = function () {
-                countryService.api.customGET('leastPopulated').then(function (data) {
+                countryService.getLeastPopulated().then(function (data) {
                     if (data.name) {
                         alert('The least populated country is ' + data.name + ' with ' + data.population + ' habitants');
                     } else {
