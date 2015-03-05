@@ -14,7 +14,11 @@
                         }
                     }
                 }
-                return [200, top || {}, {}];
+                if(!!top){
+                    return [200, top, {}];
+                }else{
+                    return [404, {}, {}];
+                }
             });
 
             $httpBackend.whenGET('webresources/' + context + '/leastPopulated').respond(function () {
@@ -29,7 +33,11 @@
                         }
                     }
                 }
-                return [200, top || {}, {}];
+                if(!!top){
+                    return [200, top, {}];
+                }else{
+                    return [404, {}, {}];
+                }
             });
         }]);
 })();

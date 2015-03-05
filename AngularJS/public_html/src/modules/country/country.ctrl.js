@@ -6,21 +6,17 @@
             this.fetchRecords();
             this.getMostPopulated = function () {
                 countryService.getMostPopulated().then(function(data){
-                    if (data.name) {
-                        alert('The most populated country is ' + data.name + ' with ' + data.population + ' habitants');
-                    } else {
-                        alert('There are no countries with population on server');
-                    }
+                    alert('The most populated country is ' + data.name + ' with ' + data.population + ' habitants');
+                }, function(){
+                    alert('There are no countries with population on server');
                 });
             };
 
             this.getLeastPopulated = function () {
                 countryService.getLeastPopulated().then(function (data) {
-                    if (data.name) {
-                        alert('The least populated country is ' + data.name + ' with ' + data.population + ' habitants');
-                    } else {
-                        alert('There are no countries with population on server');
-                    }
+                    alert('The least populated country is ' + data.name + ' with ' + data.population + ' habitants');
+                }, function(){
+                    alert('There are no countries with population on server');
                 });
             };
         }]);
