@@ -44,13 +44,13 @@ En la siguiente tabla se detalla los servicios REST generados para la entidad Sp
 }
 ```
 #####**Servicios**
-Método|URI|Acción|Parámetros|Retorno
-:--:|:--:|:--:|:--:|:--:
-**GET**|/sports|Obtener todos los objetos de Sport (RETRIEVE)|**@QueryParam page**: página a consultar<br>**@QueryParam maxRecords**: cantidad de registros a consultar<br><br>*Si se omite alguno de estos parámetros se obtiene todos los registros en la base de datos*|colección JSON con instancias de Sport
-**GET**|/sports/:id|Obtener los atributos de una instancia de Sport (RETRIEVE)|**@PathParam id**: Identificador del registro|Objeto JSON con detalle de la instancia de Sport
-**POST**|/sports|Crear una nueva instancia de la entidad Sport (CREATE)|Objeto JSON de la entidad|Objeto JSON de Sport creado
-**PUT**|/sports|Actualiza una instancia de la entidad Sport (UPDATE)|Objeto JSON de Sport|Objeto JSON Sport actualizado
-**DELETE**|/sports/:id|Borra instancia de Sport en el servidor (DELETE)|<strong>@PathParam id</strong>: Identificador del registro| 
+Método|URI|Acción|Parámetros|Retorno|Error
+:--:|:--:|:--:|:--:|:--:|:--:
+**GET**|/sports|Obtener todos los objetos de Sport (RETRIEVE)|**@QueryParam page**: página a consultar<br>**@QueryParam maxRecords**: cantidad de registros a consultar<br><br>*Si se omite alguno de estos parámetros se obtiene todos los registros en la base de datos*|colección JSON con instancias de Sport|
+**GET**|/sports/:id|Obtener los atributos de una instancia de Sport (RETRIEVE)|**@PathParam id**: Identificador del registro|Objeto JSON con detalle de la instancia de Sport|
+**POST**|/sports|Crear una nueva instancia de la entidad Sport (CREATE)|Objeto JSON de la entidad|Objeto JSON de Sport creado|
+**PUT**|/sports|Actualiza una instancia de la entidad Sport (UPDATE)|Objeto JSON de Sport|Objeto JSON Sport actualizado|
+**DELETE**|/sports/:id|Borra instancia de Sport en el servidor (DELETE)|<strong>@PathParam id</strong>: Identificador del registro| |
 
 ###**Entidad Country**
 ####**CRUD Básico**
@@ -65,12 +65,12 @@ En la siguiente tabla se detalla los servicios REST generados para la entidad Co
 }
 ```
 #####**Servicios**
-Método|URI|Acción|Parámetros|Retorno
-:--:|:--:|:--:|:--:|:--:
-**GET**|/countries|Obtener todos los objetos de Country (RETRIEVE)|**@QueryParam page**: página a consultar<br>**@QueryParam maxRecords**: cantidad de registros a consultar<br><br>*Si se omite alguno de estos parámetros se obtiene todos los registros en la base de datos*|colección JSON con instancias de Country
-**GET**|/countries/:id|Obtener los atributos de una instancia de Country (RETRIEVE)|**@PathParam id**: Identificador del registro|Objeto JSON con detalle de la instancia de Country
-**POST**|/countries|Crear una nueva instancia de la entidad Country (CREATE)|Objeto JSON de la entidad|Objeto JSON de Country creado
-**PUT**|/countries|Actualiza una instancia de la entidad Country (UPDATE)|Objeto JSON de Country|Objeto JSON Country actualizado
-**DELETE**|/countries/:id|Borra instancia de Country en el servidor (DELETE)|<strong>@PathParam id</strong>: Identificador del registro| 
-**GET**|/countries/mostPopulated|Obtiene del servidor el país con **menor** población|| Objeto JSON de Country
-**GET**|/countries/leastPopulated|Obtiene del servidor el país con **mayor** población|| Objeto JSON de Country
+Método|URI|Acción|Parámetros|Retorno|Error
+:--:|:--:|:--:|:--:|:--:|:--:
+**GET**|/countries|Obtener todos los objetos de Country (RETRIEVE)|**@QueryParam page**: página a consultar<br>**@QueryParam maxRecords**: cantidad de registros a consultar<br><br>*Si se omite alguno de estos parámetros se obtiene todos los registros en la base de datos*|colección JSON con instancias de Country|
+**GET**|/countries/:id|Obtener los atributos de una instancia de Country (RETRIEVE)|**@PathParam id**: Identificador del registro|Objeto JSON con detalle de la instancia de Country|
+**POST**|/countries|Crear una nueva instancia de la entidad Country (CREATE)|Objeto JSON de la entidad|Objeto JSON de Country creado|
+**PUT**|/countries|Actualiza una instancia de la entidad Country (UPDATE)|Objeto JSON de Country|Objeto JSON Country actualizado|
+**DELETE**|/countries/:id|Borra instancia de Country en el servidor (DELETE)|<strong>@PathParam id</strong>: Identificador del registro| |
+**GET**|/countries/mostPopulated|Obtiene del servidor el país con **menor** población|| Objeto JSON de Country|Si no hay paises retorna error 404
+**GET**|/countries/leastPopulated|Obtiene del servidor el país con **mayor** población|| Objeto JSON de Country|Si no hay paises retorna error 404
