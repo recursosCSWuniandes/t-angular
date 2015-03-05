@@ -72,3 +72,5 @@ Método|URI|Acción|Parámetros|Retorno
 **POST**|/countries|Crear una nueva instancia de la entidad Country (CREATE)|Objeto JSON de la entidad|Objeto JSON de Country creado
 **PUT**|/countries|Actualiza una instancia de la entidad Country (UPDATE)|Objeto JSON de Country|Objeto JSON Country actualizado
 **DELETE**|/countries/:id|Borra instancia de Country en el servidor (DELETE)|<strong>@PathParam id</strong>: Identificador del registro| 
+**GET**|/countries/mostPopulated|Obtiene del servidor el país con **menor** población|| Objeto JSON de Country
+**GET**|/countries/leastPopulated|Obtiene del servidor el país con **mayor** población|| Objeto JSON de Country
